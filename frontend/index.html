@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ebay Api</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="logo">
+      <div>
+        <img class="logo-image" src="images/eBayLogo.png" />
+        <span class="logo-name"> Shopping </span>
+      </div>
+    </div>
+
+    <div class="search-form">
+      <form class="" id="ebay-search-form">
+        <!-- keywords -->
+        <div class="form-row">
+          <label for="keywords">keywords<span class="red-text">*</span>:</label>
+          <input type="text" id="keywords" name="keywords" value="" required />
+        </div>
+        <hr />
+
+        <!-- Price Range -->
+        <div class="form-row price-range">
+          <label>Price Range:</label>
+          <label for="price-range-from">From</label>
+          <input type="number" id="price-range-from" name="price-range-from" step="0.01" />
+          <label for="price-range-to">To</label>
+          <input type="number" id="price-range-to" name="price-range-to" step="0.01" />
+        </div>
+        <hr />
+
+        <!-- Condition -->
+        <div class="form-row">
+          <label>Condition:</label>
+          <input type="checkbox" id="new" name="new" />
+          <label for="new">New</label>
+          <input type="checkbox" id="used" name="used" />
+          <label for="used">Used</label>
+          <input type="checkbox" id="very-good" name="very-good" />
+          <label for="very-good">Very Good</label>
+          <input type="checkbox" id="good" name="good" />
+          <label for="good">Good</label>
+          <input type="checkbox" id="acceptable" name="acceptable" />
+          <label for="acceptable">Acceptable</label>
+        </div>
+        <hr />
+
+        <!-- Seller -->
+        <div class="form-row">
+          <label>Seller:</label>
+          <input type="checkbox" id="return-accepted" name="return-accepted" />
+          <label for="return-accepted">Return Accepted</label>
+        </div>
+        <hr />
+
+        <!-- Shipping -->
+        <div class="form-row">
+          <label>Shipping:</label>
+          <input type="checkbox" id="shipping-free" name="shipping-free" />
+          <label for="shipping-free">Free</label>
+          <input type="checkbox" id="shipping-expedited" name="shipping-expedited" />
+          <label for="shipping-expedited">Expedited</label>
+        </div>
+        <hr />
+
+        <!-- Sort By -->
+        <div class="form-row">
+          <label>Sort by:</label>
+          <select id="sortby" name="sortby">
+            <option value="BestMatch">Best Match</option>
+            <option value="CurrentPriceHighest">Price: highest first</option>
+            <option value="PricePlusShippingHighest">Price + Shipping: highest first</option>
+            <option value="PricePlusShippingLowest">Price + Shipping: lowest first</option>
+          </select>
+        </div>
+        <hr />
+        <div class="form-row">
+          <button class="my-button" type="button" id="clearButton">Clear</button>
+          <button class="my-button" type="submit" id="searchButton">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Search Results -->
+    <div id="search-results">
+      <div id="search-results-empty">
+        <h3>No Results found</h3>
+      </div>
+      <div id="search-results-found">
+        <h3 id="found-title">Results found</h3>
+        <hr id="found-divider" />
+        <ul id="found-results"></ul>
+        <button class="my-button" id="show-more">Show More</button>
+      </div>
+    </div>
+
+    <!-- Product detauls part -->
+    <div id="product-details">
+      <div id="product-details-header">
+        <h1>Item Details</h1>
+        <button class="my-button" id="product-details-back">Back to search results</button>
+      </div>
+      <ul id="product-details-table">
+        <li id="product-details-photo-row" class="product-details-table-row">
+          <div class="product-details-key">Photo</div>
+          <div class="product-details-value">
+            <img id="product-details-img" />
+          </div>
+        </li>
+        <li id="product-details-link-row" class="product-details-table-row">
+          <div class="product-details-key">eBay Link</div>
+          <div class="product-details-value">
+            <a id="product-details-ebay-link" target="_blank">eBay Product Link</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
